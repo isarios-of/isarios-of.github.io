@@ -16,18 +16,18 @@
     font-family:inherit; box-sizing:border-box; }
   .a { background:#fff; color:#111; }
   .b { background:#2a2a2a; color:#fff; }
-  .c { background:#222; color:#ddd; font-size:.9rem; }
-  code { display:block; margin-top:.8rem; padding:.7rem; border-radius:10px; background:#1a1a1a;
+  .hint { opacity:.55; margin:1.1rem 0 .35rem; font-size:.8rem; }
+  code { display:block; padding:.7rem; border-radius:10px; background:#1a1a1a;
     font-size:.85rem; word-break:break-all; }
 </style>
 </head>
 <body>
 <main>
   <h1>Isabela</h1>
-  <p>tiktok tapa algunos links. ábrelo en chrome o en la app, no dentro de tiktok.</p>
-  <button class="a" type="button" id="yt">abrir youtube 🔥</button>
-  <button class="b" type="button" id="fv">abrir fanvue (chrome)</button>
-  <a class="c" href="https://www.instagram.com/s/aGlnaGxpZ2h0OjE4MTQwMzUxMzg2NjAwMDc2?story_media_id=3981671263378525222&stkn=ZWczOTJ6N2FscnR5">instagram</a>
+  <p>lo que no sale en tiktok</p>
+  <button class="a" type="button" id="yt">abrir yt para más 🔥🍑</button>
+  <a class="b" href="https://www.instagram.com/s/aGlnaGxpZ2h0OjE4MTQwMzUxMzg2NjAwMDc2?story_media_id=3981671263378525222&stkn=ZWczOTJ6N2FscnR5">abrir insta para más 🔥🍑</a>
+  <p class="hint">enlace manual</p>
   <code id="copy">fanvue.com/isarios</code>
 </main>
 <script>
@@ -36,17 +36,11 @@
   var YT_APP = "youtube://www.youtube.com/@isabelaarios";
   var YT_AND = "intent://www.youtube.com/@isabelaarios#Intent;scheme=https;package=com.google.android.youtube;end";
   var FV = "https://www.fanvue.com/isarios";
-  var FV_AND = "intent://www.fanvue.com/isarios#Intent;scheme=https;action=android.intent.action.VIEW;end";
-  var FV_IOS = "x-safari-https://www.fanvue.com/isarios";
   var ua = navigator.userAgent || "";
   var and = /android/i.test(ua);
   document.getElementById("yt").onclick = function () {
     location.href = and ? YT_AND : YT_APP;
     setTimeout(function () { location.href = YT_HTTPS; }, 900);
-  };
-  document.getElementById("fv").onclick = function () {
-    location.href = and ? FV_AND : FV_IOS;
-    setTimeout(function () { location.href = FV; }, 900);
   };
   document.getElementById("copy").onclick = function () {
     if (navigator.clipboard) navigator.clipboard.writeText(FV);
