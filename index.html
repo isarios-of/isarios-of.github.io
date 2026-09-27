@@ -26,27 +26,20 @@
   <h1>Isabela</h1>
   <p>lo que no sale en tiktok</p>
   <button class="a" type="button" id="ig">abrir insta para más 🔥🍑</button>
-  <button class="b" type="button" id="yt">abrir yt para más 🔥🍑</button>
   <p class="hint">enlace manual</p>
   <code id="copy">fanvue.com/isarios</code>
 </main>
 <script>
 (function () {
-  var IG_HTTPS = "https://www.instagram.com/isabela.rios99/";
-  var IG_APP = "instagram://user?username=isabela.rios99";
-  var YT_HTTPS = "https://www.youtube.com/@isabelaarios";
-  var YT_APP = "youtube://www.youtube.com/@isabelaarios";
-  var YT_AND = "intent://www.youtube.com/@isabelaarios#Intent;scheme=https;package=com.google.android.youtube;end";
+  // Instagram highlight shared by Juan (2026-09-27). Android opens it inside the Instagram app through an intent
+  // (falls back to the web link if the app is missing); iOS follows the https link, which Instagram handles itself.
+  var IG_HTTPS = "https://www.instagram.com/s/aGlnaGxpZ2h0OjE4MDAyMDY0OTcxOTkwMzk0?story_media_id=3995017852767573798&stkn=MTRyOHptanFxNDJuMg==";
+  var IG_AND = "intent://www.instagram.com/s/aGlnaGxpZ2h0OjE4MDAyMDY0OTcxOTkwMzk0?story_media_id=3995017852767573798&stkn=MTRyOHptanFxNDJuMg==#Intent;scheme=https;package=com.instagram.android;S.browser_fallback_url=https%3A%2F%2Fwww.instagram.com%2Fs%2FaGlnaGxpZ2h0OjE4MDAyMDY0OTcxOTkwMzk0%3Fstory_media_id%3D3995017852767573798%26stkn%3DMTRyOHptanFxNDJuMg%3D%3D;end";
   var FV = "https://www.fanvue.com/isarios";
   var ua = navigator.userAgent || "";
   var and = /android/i.test(ua);
   document.getElementById("ig").onclick = function () {
-    location.href = IG_APP;
-    setTimeout(function () { location.href = IG_HTTPS; }, 900);
-  };
-  document.getElementById("yt").onclick = function () {
-    location.href = and ? YT_AND : YT_APP;
-    setTimeout(function () { location.href = YT_HTTPS; }, 900);
+    location.href = and ? IG_AND : IG_HTTPS;
   };
   document.getElementById("copy").onclick = function () {
     if (navigator.clipboard) navigator.clipboard.writeText(FV);
